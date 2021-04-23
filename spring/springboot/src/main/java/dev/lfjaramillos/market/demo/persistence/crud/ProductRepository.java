@@ -16,7 +16,7 @@ public class ProductRepository {
     public List<Product> getByCategory(Integer idCategory){
      return (List<Product>) productCrudRepository.findByIdCategoryOrderByNameAsc(idCategory);
     }
-    public Optional< List<Product>> getByCategory(Integer quantity){
-     return (List<Product>) productCrudRepository.findByStockQuantityLessThanAndState(quantity, true);
+    public Optional< List<Product>> getByCategory2(Integer quantity){
+     return   productCrudRepository.findByStockQuantityLessThanAndState(quantity, true);
     }
 }
