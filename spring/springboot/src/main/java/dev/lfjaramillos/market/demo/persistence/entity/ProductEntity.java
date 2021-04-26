@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "PRODUCTOS")
-public class Product {
+public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +30,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
-    private Category category;
+    private CategoryEntity categoryEntity;
 
     public Integer getProductId() {
         return productId;
@@ -86,5 +86,13 @@ public class Product {
 
     public void setState(boolean state) {
         this.state = state;
+    }
+
+    public CategoryEntity getCategoryEntity() {
+        return categoryEntity;
+    }
+
+    public void setCategoryEntity(CategoryEntity categoryEntity) {
+        this.categoryEntity = categoryEntity;
     }
 }
