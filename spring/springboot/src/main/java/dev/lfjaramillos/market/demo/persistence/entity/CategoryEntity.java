@@ -12,13 +12,13 @@ public class CategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "description")
+    @Column(name = "descripcion")
     private String description;
 
     @Column(name = "estado")
     private Boolean active;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "categoryEntity")
     private List<ProductEntity> productEntities;
 
     public Integer getId() {
