@@ -1,4 +1,4 @@
-package dev.lfjaramillos.market.demo.webcontroller;
+package dev.lfjaramillos.market.demo.web.controller;
 
 import dev.lfjaramillos.market.demo.domain.Product;
 import dev.lfjaramillos.market.demo.domain.service.ProductService;

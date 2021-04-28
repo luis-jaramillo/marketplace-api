@@ -1,4 +1,4 @@
-package dev.lfjaramillos.market.demo.webcontroller.config;
+package dev.lfjaramillos.market.demo.web.config;
 
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.RequestHandlerSelectors;
