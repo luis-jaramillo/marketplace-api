@@ -24,6 +24,15 @@ public interface ProductoMapper {
 
     List<Product> toProducts(List<ProductEntity> productEntities);
 
-    @Mapping(target = "barCode", ignore = true)
+
+    @Mappings({
+            @Mapping(target = "barCode", ignore = true),
+            @Mapping(target = "idCategory", ignore = true),
+            @Mapping(target = "sale_Price", ignore = true),
+            @Mapping(target = "stockQuantity", ignore = true),
+            @Mapping(target = "state", ignore = true),
+            @Mapping(target = "categoryEntity", ignore = true),
+
+    })
     ProductEntity toProductEntity(Product product);
 }
