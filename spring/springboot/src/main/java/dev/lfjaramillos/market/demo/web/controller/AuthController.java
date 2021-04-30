@@ -2,6 +2,7 @@ package dev.lfjaramillos.market.demo.web.controller;
 
 import dev.lfjaramillos.market.demo.domain.dto.AuthenticationRequest;
 import dev.lfjaramillos.market.demo.domain.dto.AuthenticationResponse;
+import dev.lfjaramillos.market.demo.domain.service.DemoMarketUserDetailService;
 import dev.lfjaramillos.market.demo.web.security.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,6 +26,8 @@ public class AuthController {
 
     @Autowired
    private UserDetailsService userDetailsService;
+    @Autowired
+   private DemoMarketUserDetailService demoMarketUserDetailService;
 
     @Autowired
     private JWTUtil jwtUtil;

@@ -11,11 +11,11 @@ import java.util.Date;
 @Component
 public class JWTUtil {
 
-    private static  final String key="market-demo";
-    public String generateToken(UserDetails userDetails){
-        return Jwts.builder().setSubject(userDetails.getUsername())
-                .setIssuedAt(new Date(System.currentTimeMillis() + 1000 * 60*60 +10))
-                .signWith(SignatureAlgorithm.ES256,key).compact();
+    private static  final String KEY="market";
+    public String generateToken(UserDetails userDetails) {
+        return Jwts.builder().setSubject(userDetails.getUsername()).setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
+                .signWith(SignatureAlgorithm.HS512, KEY).compact();
     }
 
     public boolean validateToken(String token, UserDetails userDetails){
@@ -29,6 +29,6 @@ public class JWTUtil {
         return getClaims(toke).getExpiration().before(new Date());
     }
     public Claims getClaims(String token){
-        return Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody();
+        return Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody();
     }
 }

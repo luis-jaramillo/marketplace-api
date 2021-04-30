@@ -18,10 +18,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private DemoMarketUserDetailService demoMarketUserDetailService;
+    @Autowired
     private JwtFilterRequest jwtFilterRequest;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
         auth.userDetailsService(demoMarketUserDetailService);
     }
 
