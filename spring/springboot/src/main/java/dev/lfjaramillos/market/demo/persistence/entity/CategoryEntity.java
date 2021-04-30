@@ -5,21 +5,21 @@ import java.util.List;
 
 @Entity
 @Table(name = "categorias")
-public class Category {
+public class CategoryEntity {
 
     @Id
     @Column(name = "id_categoria")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "description")
+    @Column(name = "descripcion")
     private String description;
 
     @Column(name = "estado")
     private Boolean active;
 
-    @OneToMany(mappedBy = "category")
-    private List<Product> products;
+    @OneToMany(mappedBy = "categoryEntity")
+    private List<ProductEntity> productEntities;
 
     public Integer getId() {
         return id;
@@ -46,4 +46,11 @@ public class Category {
     }
 
 
+    public List<ProductEntity> getProductEntities() {
+        return productEntities;
+    }
+
+    public void setProductEntities(List<ProductEntity> productEntities) {
+        this.productEntities = productEntities;
+    }
 }
